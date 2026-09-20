@@ -1,0 +1,94 @@
+(^() => {
+"use strict";
+
+const START = "/api/camera/start";
+const STOP = "/api/camera/stop";
+const STREAM = "/api/camera/stream";
+let cameraOn = false;
+let button = null;
+
+function getFeed() {
+    return document.getElementById("aurex-camera-feed") ||
+           document.querySelector(".aurex-camera-feed");
+}
+
+function createButton() {
+    if (document.getElementById("aurex-camera-control")) {
+        button = document.getElementById("aurex-camera-control");
+        return;
+    }
+
+    button = document.createElement("button");
+    button.id = "aurex-camera-control";
+    button.type = "button";
+    button.textContent = "CAMERA OFF";
+
+    button.style.cssText = "position:fixed!important;right:24px!important;bottom:24px!important;z-index:2147483647!important;width:170px!important;height:52px!important;border:1px solid rgba^(100,210,255,.5^)!important;border-radius:14px!important;background:#101821!important;color:#f4f8ff!important;font-family:Arial,sans-serif!important;font-size:13px!important;font-weight:700!important;letter-spacing:2px!important;cursor:pointer!important;pointer-events:auto!important;display:block!important;";
+
+    document.body.appendChild(button);
+
+    button.addEventListener("click", async function() {
+        if (cameraOn) {
+            await turnOff();
+        } else {
+            await turnOn();
+        }
+    });
+}
+
+function update() {
+    if (!button) return;
+    button.textContent = cameraOn ? "CAMERA ON" : "CAMERA OFF";
+    button.style.borderColor = cameraOn ? "rgba^(77,225,193,.8^)" : "rgba^(100,210,255,.5^)";
+}
+
+async function turnOn() {
+    createButton();
+    button.disabled = true;
+    try {
+        const response = await fetch(START, {method:"POST",cache:"no-store"});
+        const result = await response.json();
+        if (!result.camera) throw new Error(result.message || "Camera unavailable");
+        const image = getFeed();
+        if (image) {
+            image.style.display = "block";
+            image.src = STREAM + "?t=" + Date.now();
+        }
+        cameraOn = true;
+        update();
+    } catch (error) {
+        console.error("AUREX camera start:", error);
+        alert("Camera could not be started.\n\n" + error.message);
+    } finally {
+        button.disabled = false;
+    }
+}
+
+async function turnOff() {
+    createButton();
+    button.disabled = true;
+    const image = getFeed();
+    if (image) {
+        image.src = "";
+        image.removeAttribute("src");
+        image.style.display = "none";
+    }
+    cameraOn = false;
+    update();
+    try {
+        await fetch(STOP, {method:"POST",cache:"no-store"});
+    } catch (error) {
+        console.warn("AUREX camera stop:", error);
+    }
+    button.disabled = false;
+}
+
+async function initialize() {
+    createButton();
+    await turnOff();
+}
+
+window.AUREXCamera = {
+    on: turnOn,
+    off: turnOff,
+    state: (^

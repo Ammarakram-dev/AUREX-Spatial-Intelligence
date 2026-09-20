@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="AUREX Spatial Intelligence — perception, spatial intelligence, security and intelligent action."
+    />
+
+    <title>AUREX Spatial Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         AUREX APPLICATION
+         ===================================================== -->
+
+    <div class="aurex-app" id="aurex-app">
+      <!-- =================================================
+             BOOT SCREEN
+             ================================================= -->
+
+      <section class="boot-screen" id="boot-screen">
+        <div class="boot-center">
+          <div class="boot-core">
+            <div class="boot-ring"></div>
+            <div class="boot-ring"></div>
+            <div class="boot-ring"></div>
+          </div>
+
+          <div class="boot-brand">AUREX</div>
+
+          <div class="boot-subtitle">SPATIAL INTELLIGENCE</div>
+
+          <div class="boot-progress">
+            <div class="boot-progress-bar" id="boot-progress-bar"></div>
+          </div>
+
+          <div class="boot-status" id="boot-status">
+            INITIALIZING SPATIAL CORE
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             TOP BAR
+             ================================================= -->
+
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark">
+            <span></span>
+          </div>
+
+          <div>
+            <div class="brand-name">AUREX</div>
+
+            <div class="brand-caption">SPATIAL INTELLIGENCE</div>
+          </div>
+        </div>
+
+        <div class="system-indicator">
+          <span class="status-dot"></span>
+
+          <span class="status-text"> SYSTEM ONLINE </span>
+
+          <span class="system-time" data-system-time> 00:00:00 </span>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="icon-button" type="button" aria-label="Notifications">
+            ◉
+          </button>
+
+          <button
+            class="icon-button"
+            type="button"
+            aria-label="System menu"
+            onclick="window.AUREX && window.AUREX.openModule('system')"
+          >
+            ☰
+          </button>
+        </div>
+      </header>
+
+      <!-- =================================================
+             COMMAND RAIL
+             ================================================= -->
+
+      <aside class="command-rail">
+        <div class="rail-index">01 COMMAND</div>
+
+        <nav class="rail-list">
+          <button class="rail-item active" type="button" data-module="overview">
+            <span class="rail-icon">⌂</span>
+            <span class="rail-label"> Overview </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="eyelock">
+            <span class="rail-icon">◉</span>
+            <span class="rail-label"> EyeLock </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="aircanvas">
+            <span class="rail-icon">✦</span>
+            <span class="rail-label"> AirCanvas </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="fallguard">
+            <span class="rail-icon">⌁</span>
+            <span class="rail-label"> FallGuard </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="hazards">
+            <span class="rail-icon">!</span>
+            <span class="rail-label"> Hazards </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="spatial">
+            <span class="rail-icon">◇</span>
+            <span class="rail-label"> Spatial </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="voice">
+            <span class="rail-icon">◌</span>
+            <span class="rail-label"> Voice </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="context">
+            <span class="rail-icon">◎</span>
+            <span class="rail-label"> Context </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="security">
+            <span class="rail-icon">▣</span>
+            <span class="rail-label"> Security </span>
+          </button>
+
+          <button class="rail-item" type="button" data-module="system">
+            <span class="rail-icon">⌘</span>
+            <span class="rail-label"> System Core </span>
+          </button>
+        </nav>
+      </aside>
+
+      <!-- =================================================
+             MAIN CONTENT
+             ================================================= -->
+
+      <main class="main-content">
+        <div class="dashboard">
+          <!-- PAGE HEADER -->
+
+          <section class="page-header">
+            <div>
+              <div class="eyebrow">AUREX / COMMAND CENTER</div>
+
+              <h1 class="page-title">Spatial Command</h1>
+
+              <p class="page-description">
+                Observe, understand and interact with the environment through
+                AUREX intelligence.
+              </p>
+            </div>
+
+            <div class="header-state">
+              <div class="header-state-label">CORE STATUS</div>
+
+              <div class="header-state-value">OPERATIONAL</div>
+            </div>
+          </section>
+
+          <!-- =================================================
+                     SPATIAL ENVIRONMENT
+                     ================================================= -->
+
+          <section class="spatial-stage" id="spatial-stage">
+            <div class="stage-header">
+              <div>
+                <div class="stage-title">LIVE SPATIAL ENVIRONMENT</div>
+
+                <div class="stage-subtitle">UNIFIED WORLD MODEL</div>
+              </div>
+
+              <div class="stage-mode">
+                <span class="stage-mode-dot"></span>
+
+                <span> MODE PERCEPTION </span>
+
+                <span> · </span>
+
+                <span> FEED STANDBY </span>
+              </div>
+            </div>
+
+            <!-- DEPTH ENVIRONMENT -->
+
+            <div class="depth-grid"></div>
+
+            <div class="scan-plane"></div>
+
+            <div class="horizon"></div>
+
+            <div class="axis-line axis-x"></div>
+
+            <div class="axis-line axis-y"></div>
+
+            <!-- HUMAN NODE -->
+
+            <div class="spatial-node node-human">
+              <div class="node-header">
+                <span class="node-dot"></span>
+
+                <span class="node-title"> HUMAN TRACKING </span>
+              </div>
+
+              <div class="node-data">
+                TRACK #01<br />
+                MOVEMENT: ACTIVE
+              </div>
+            </div>
+
+            <!-- OBJECT NODE -->
+
+            <div class="spatial-node node-object">
+              <div class="node-header">
+                <span class="node-dot violet"></span>
+
+                <span class="node-title"> OBJECT ANALYZING </span>
+              </div>
+
+              <div class="node-data">
+                OBJECTS: TRACKED<br />
+                RELATIONS: ACTIVE
+              </div>
+            </div>
+
+            <!-- CONTEXT NODE -->
+
+            <div class="spatial-node node-context">
+              <div class="node-header">
+                <span class="node-dot green"></span>
+
+                <span class="node-title"> CONTEXT ACTIVE </span>
+              </div>
+
+              <div class="node-data">
+                ENVIRONMENT: STABLE<br />
+                CONFIDENCE: 94%
+              </div>
+            </div>
+
+            <!-- 3D AUREX CORE -->
+
+            <div class="aurex-core-object" id="aurex-core-object">
+              <div class="orbit-ring"></div>
+              <div class="orbit-ring"></div>
+              <div class="orbit-ring"></div>
+
+              <div class="core-cube">
+                <div class="cube-face cube-front"></div>
+                <div class="cube-face cube-back"></div>
+                <div class="cube-face cube-right"></div>
+                <div class="cube-face cube-left"></div>
+                <div class="cube-face cube-top"></div>
+                <div class="cube-face cube-bottom"></div>
+              </div>
+
+              <div class="core-energy"></div>
+            </div>
+
+            <!-- STAGE METRICS -->
+
+            <div class="stage-metrics">
+              <div class="stage-metric">
+                <div class="metric-label">AXIS X</div>
+
+                <div class="metric-value">+024.8</div>
+              </div>
+
+              <div class="stage-metric">
+                <div class="metric-label">AXIS Y</div>
+
+                <div class="metric-value">+018.2</div>
+              </div>
+
+              <div class="stage-metric">
+                <div class="metric-label">DEPTH</div>
+
+                <div class="metric-value">03.42 M</div>
+              </div>
+
+              <div class="stage-metric">
+                <div class="metric-label">SPACE</div>
+
+                <div class="metric-value metric-state">STABLE</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =================================================
+                     INTELLIGENCE CARDS
+                     ================================================= -->
+
+          <section class="intelligence-grid">
+            <!-- EYELOCK -->
+
+            <article class="intelligence-card" data-open-module="eyelock">
+              <div class="card-number">01</div>
+
+              <div class="card-category">SECURITY INTELLIGENCE</div>
+
+              <h3>EyeLock</h3>
+
+              <p class="card-description">
+                Adaptive identity and liveness verification.
+              </p>
+
+              <div class="card-footer">
+                <span class="card-state"> READY </span>
+
+                <span class="card-arrow"> ↗ </span>
+              </div>
+            </article>
+
+            <!-- AIRCANVAS -->
+
+            <article class="intelligence-card" data-open-module="aircanvas">
+              <div class="card-number">02</div>
+
+              <div class="card-category">SPATIAL INTERACTION</div>
+
+              <h3>AirCanvas</h3>
+
+              <p class="card-description">
+                Manipulate digital objects through natural hand gestures.
+              </p>
+
+              <div class="card-footer">
+                <span class="card-state"> READY </span>
+
+                <span class="card-arrow"> ↗ </span>
+              </div>
+            </article>
+
+            <!-- HAZARDS -->
+
+            <article class="intelligence-card" data-open-module="hazards">
+              <div class="card-number">03</div>
+
+              <div class="card-category">PREDICTIVE INTELLIGENCE</div>
+
+              <h3>Hazard Engine</h3>
+
+              <p class="card-description">
+                Monitor environmental signals and developing risk patterns.
+              </p>
+
+              <div class="card-footer">
+                <span class="card-state"> CLEAR </span>
+
+                <span class="card-arrow"> ↗ </span>
+              </div>
+            </article>
+
+            <!-- CONTEXT -->
+
+            <article class="intelligence-card" data-open-module="context">
+              <div class="card-number">04</div>
+
+              <div class="card-category">ENVIRONMENTAL INTELLIGENCE</div>
+
+              <h3>Context</h3>
+
+              <p class="card-description">
+                Understand activity, environment, relationships and current
+                state.
+              </p>
+
+              <div class="card-footer">
+                <span class="card-state"> ACTIVE </span>
+
+                <span class="card-arrow"> ↗ </span>
+              </div>
+            </article>
+          </section>
+
+          <!-- =================================================
+                     LOWER INTELLIGENCE
+                     ================================================= -->
+
+          <section class="lower-grid">
+            <!-- SITUATION -->
+
+            <article class="intelligence-panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-title">Current Situation</div>
+
+                  <div class="panel-label">INTELLIGENCE STREAM</div>
+                </div>
+
+                <div class="card-state">LIVE</div>
+              </div>
+
+              <div class="situation-display">
+                <div class="situation-orb"></div>
+
+                <div>
+                  <div class="situation-main" id="situation-main">
+                    Environment Stable
+                  </div>
+
+                  <div class="situation-sub" id="situation-sub">
+                    AUREX is continuously observing the environment and
+                    maintaining a unified spatial model.
+                  </div>
+                </div>
+              </div>
+
+              <div class="signal-list">
+                <div class="signal-row">
+                  <span class="signal-name"> Perception </span>
+
+                  <span class="signal-value"> ACTIVE </span>
+                </div>
+
+                <div class="signal-row">
+                  <span class="signal-name"> Context </span>
+
+                  <span class="signal-value"> ACTIVE </span>
+                </div>
+
+                <div class="signal-row">
+                  <span class="signal-name"> Security </span>
+
+                  <span class="signal-value"> VERIFIED </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- RUNTIME -->
+
+            <article class="intelligence-panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-title">Runtime Health</div>
+
+                  <div class="panel-label">SYSTEM CORE</div>
+                </div>
+
+                <button
+                  class="panel-action"
+                  type="button"
+                  data-open-module="system"
+                >
+                  OPEN CORE ↗
+                </button>
+              </div>
+
+              <div class="runtime-health-main">
+                <div class="health-number">98</div>
+
+                <div class="health-label">HEALTH</div>
+              </div>
+
+              <div class="health-list">
+                <div class="health-row">
+                  <span class="health-name"> Runtime </span>
+
+                  <div class="health-bar">
+                    <span style="width: 98%"></span>
+                  </div>
+
+                  <span class="health-value"> 98% </span>
+                </div>
+
+                <div class="health-row">
+                  <span class="health-name"> Perception </span>
+
+                  <div class="health-bar">
+                    <span style="width: 96%"></span>
+                  </div>
+
+                  <span class="health-value"> 96% </span>
+                </div>
+
+                <div class="health-row">
+                  <span class="health-name"> Intelligence </span>
+
+                  <div class="health-bar">
+                    <span style="width: 94%"></span>
+                  </div>
+
+                  <span class="health-value"> 94% </span>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <!-- =================================================
+                     INTELLIGENCE RAIL
+                     ================================================= -->
+
+          <section class="intelligence-rail">
+            <!-- SECURITY -->
+
+            <article class="intelligence-panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-label">INTELLIGENCE 02</div>
+
+                  <div class="panel-title">Security State</div>
+                </div>
+
+                <div class="card-state">SECURE</div>
+              </div>
+
+              <div class="security-state">
+                <div class="security-symbol">A</div>
+
+                <div>
+                  <div class="security-main">VERIFIED</div>
+
+                  <div class="security-sub">MULTI-SIGNAL</div>
+                </div>
+              </div>
+
+              <div class="signal-list">
+                <div class="signal-row">
+                  <span class="signal-name"> Identity </span>
+
+                  <span class="signal-value"> READY </span>
+                </div>
+
+                <div class="signal-row">
+                  <span class="signal-name"> Liveness </span>
+
+                  <span class="signal-value"> READY </span>
+                </div>
+
+                <div class="signal-row">
+                  <span class="signal-name"> Trust </span>
+
+                  <span class="signal-value"> ACTIVE </span>
+                </div>
+              </div>
+
+              <button
+                class="panel-link"
+                type="button"
+                data-open-module="eyelock"
+              >
+                OPEN EYELOCK ↗
+              </button>
+            </article>
+
+            <!-- CONTEXT -->
+
+            <article class="intelligence-panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-label">ENVIRONMENT</div>
+
+                  <div class="panel-title">Current Context</div>
+                </div>
+              </div>
+
+              <div class="context-grid">
+                <div class="context-item">
+                  <span> ENVIRONMENT </span>
+
+                  <strong> INDOOR </strong>
+                </div>
+
+                <div class="context-item">
+                  <span> PEOPLE </span>
+
+                  <strong id="context-people"> 01 </strong>
+                </div>
+
+                <div class="context-item">
+                  <span> ACTIVITY </span>
+
+                  <strong> ACTIVE </strong>
+                </div>
+
+                <div class="context-item">
+                  <span> PRIORITY </span>
+
+                  <strong> NORMAL </strong>
+                </div>
+              </div>
+            </article>
+
+            <!-- QUICK ACTIONS -->
+
+            <article class="intelligence-panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-label">COMMAND</div>
+
+                  <div class="panel-title">Quick Actions</div>
+                </div>
+              </div>
+
+              <div class="quick-actions">
+                <button
+                  class="quick-action"
+                  type="button"
+                  data-action="aircanvas"
+                >
+                  <span class="action-icon"> ✦ </span>
+
+                  <span>
+                    <span class="action-title"> AirCanvas </span>
+
+                    <span class="action-description"> Enter spatial mode </span>
+                  </span>
+                </button>
+
+                <button class="quick-action" type="button" data-action="voice">
+                  <span class="action-icon"> ◉ </span>
+
+                  <span>
+                    <span class="action-title"> Voice </span>
+
+                    <span class="action-description">
+                      Start voice interface
+                    </span>
+                  </span>
+                </button>
+
+                <button
+                  class="quick-action emergency"
+                  type="button"
+                  data-action="emergency"
+                >
+                  <span class="action-icon"> ! </span>
+
+                  <span>
+                    <span class="action-title"> Emergency </span>
+
+                    <span class="action-description"> Emergency controls </span>
+                  </span>
+                </button>
+              </div>
+            </article>
+          </section>
+
+          <!-- FOOTER -->
+
+          <footer class="system-footer">
+            <div>AUREX SPATIAL INTELLIGENCE CORE</div>
+
+            <div>v1.0.0</div>
+
+            <div>ALL SYSTEMS NOMINAL</div>
+          </footer>
+        </div>
+      </main>
+
+      <!-- =================================================
+             MODULE OVERLAY
+             ================================================= -->
+
+      <section class="module-overlay" id="module-overlay">
+        <div class="module-window">
+          <header class="module-header">
+            <div>
+              <div class="module-header-title" id="module-header-title">
+                Spatial Command Center
+              </div>
+
+              <div class="module-header-subtitle" id="module-header-subtitle">
+                Unified perception, intelligence and action
+              </div>
+            </div>
+
+            <button
+              class="module-close"
+              id="module-close"
+              type="button"
+              aria-label="Close module"
+            >
+              ×
+            </button>
+          </header>
+
+          <div class="module-body" id="module-body"></div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             NOTIFICATIONS
+             ================================================= -->
+
+      <section class="notification-panel" id="notification-panel"></section>
+    </div>
+
+    <!-- =====================================================
+         APPLICATION SCRIPT
+         ===================================================== -->
+
+    <script src="./app.js"></script>
+  <script src="/camera/camera-control.js"></script></body>
+</html>
